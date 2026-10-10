@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Tech2etc Ecommerce Tutorial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="Stylesheet" href="E:\Shopping app\html code\style.css" />
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="E:\Shopping app\images\Products\logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Addtocart.html" id="lg-bag"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+
+
+            </ul>
+        </div>
+        <div id="mobile">
+
+            <a href="Addtocart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-imge">
+            <img src="E:\Shopping app\images\Products\f9.jpeg" width="100%" id="MainImg" alt="">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="E:\Shopping app\images\Products\f9.jpeg" width="100%" class="small-img">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="E:\Shopping app\images\Products\f10.jpeg" width="100%" class="small-img">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="E:\Shopping app\images\Products\f11.jpeg" width="100%" class="small-img">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="E:\Shopping app\images\Products\f12.jpeg" width="100%" class="small-img">
+                </div>
+
+
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h6><strong>Adidas</strong><br><br><br>
+                <strong>Color :</strong> Brown
+            </h6>
+            <h4>GRECIILOOKS T Shirt for Men Poly Cotton | Textured <br>
+                Oversized Fit Man T-Shirt | Round Neck Half Sleeve Men<br>
+                t-shirt's (Available in Plus Size)</h4>
+            <h2><i class="fa-solid fa-indian-rupee-sign"></i>495.00</h2>
+            <select id="productSize">
+                <option>Select Size</option>
+                <option selected>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+            </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <button class="normal" onclick="buyNow()">By Now</button>
+            <h4></h4>
+            <span><b>About this item</b><br>
+                • Premium Striped Fabric - Made from high-quality cotton-blend fabric with fine vertical stripes that feel soft, breathable, and polished for all-day comfort.<br>
+                • Slim Fit Tailoring - Designed with a modern slim fit that enhances body shape while allowing comfortable movement; ideal for a sharp, confident look.<br>
+                • Classic Vertical Stripe Design - Stripes create a clean, sophisticated appearance that visually elongates the frame.<br>
+                • Versatile Styling Options - Perfect to wear tucked with trousers for formal looks or untucked with chinos or jeans for smart-casual occasions.<br>
+                • Timeless Wardrobe Essential - Easy to pair with trousers, chinos, or jeans; perfect for year-round premium dressing.</span>
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Color Options</h2>
+        <p>summer collection New Modern Design</p>
+        <div class="pro-container">
+
+            <div class="pro" style="cursor: pointer;" data-small-imgs='["E:\\Shopping app\\images\\Products\\f14.jpeg", "E:\\Shopping app\\images\\Products\\f15.jpeg", "E:\\Shopping app\\images\\Products\\f16.jpeg", "E:\\Shopping app\\images\\Products\\f17.jpeg"]'>
+                <img src="E:\Shopping app\images\Products\f14.jpeg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Textured Oversized Fit Man t-Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4><i class="fa-solid fa-indian-rupee-sign"></i>499.00</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+
+            <div class="pro" style="cursor: pointer;" data-small-imgs='["E:\\Shopping app\\images\\Products\\f19.jpeg", "E:\\Shopping app\\images\\Products\\f20.jpeg", "E:\\Shopping app\\images\\Products\\f21.jpeg", "E:\\Shopping app\\images\\Products\\f22.jpeg"]'>
+                <img src="E:\Shopping app\images\Products\f19.jpeg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Textured Oversized Fit Man t-Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4><i class="fa-solid fa-indian-rupee-sign"></i>499.00</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+
+            <div class="pro" style="cursor: pointer;" data-small-imgs='["E:\\Shopping app\\images\\Products\\f18.jpeg", "E:\\Shopping app\\images\\Products\\f17.jpeg", "E:\\Shopping app\\images\\Products\\f16.jpeg", "E:\\Shopping app\\images\\Products\\f15.jpeg"]'>
+                <img src="E:\Shopping app\images\Products\f18.jpeg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Textured Oversized Fit Man t-Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4><i class="fa-solid fa-indian-rupee-sign"></i>899.00</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+
+            <div class="pro" style="cursor: pointer;" data-small-imgs='["E:\\Shopping app\\images\\Products\\f23.jpeg", "E:\\Shopping app\\images\\Products\\f22.jpeg", "E:\\Shopping app\\images\\Products\\f21.jpeg", "E:\\Shopping app\\images\\Products\\f20.jpeg"]'>
+                <img src="E:\Shopping app\images\Products\f23.jpeg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Textured Oversized Fit Man t-Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4><i class="fa-solid fa-indian-rupee-sign"></i>899.00</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo " src="E:\Shopping app\images\Products\logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Kansa N.A road, Visnagar </p>
+            <p><strong>Phone:</strong> (+91) 8128036320</p>
+            <p><strong>Hours:</strong>10:00 - 18:00, Mon - Sat </p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/share/1H2fb8jbGU/">
+                        <i class="fa-brands fa-facebook"></i></a>
+
+                    <i class="fa-brands fa-twitter"></i>
+                    <a href="https://www.instagram.com/ved_patel16?igsh=MXVpMzVxZmZwcmRtYw==">
+                        <i class="fa-brands fa-instagram"></i></a>
+                    <i class="fa-brands fa-pinterest"></i>
+                    <a href="https://youtube.com/@ved_gaming_007?si=9U7tTuYo182hvdED">
+                        <i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contect us</a>
+
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Trsck My Order</a>
+            <a href="#">Help</a>
+
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://apps.apple.com/us/app/amazon-shopping/id297606951"> <img
+                        src="E:\Shopping app\images\Pay\app.jpg"></a>
+                <a href="https://play.google.com/store/search?q=amazon&c=apps&hl=en_IN">
+                    <img src="E:\Shopping app\images\Pay\play.jpg"></a>
+
+            </div>
+            <p>Secured App Store or Google Play</p>
+            <img src="E:\Shopping app\images\Pay\pay.png">
+
+        </div>
+        <div class="copyright">
+            <p>@ 2026, Tech2 etc - HTML CSS Ecommerce Template</p>
+        </div>
+    </footer>
+
+    <script>
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function () {
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function () {
+            MainImg.src = smallimg[3].src;
+        }
+
+        function buyNow() {
+            const sizeVal = document.getElementById("productSize").value;
+            const checkoutProduct = {
+                name: "GRECIILOOKS T Shirt for Men",
+                price: "$499.00",
+                img: document.getElementById("MainImg").src,
+                brand: "Adidas",
+                size: sizeVal !== "Select Size" ? sizeVal : "XL"
+            };
+            localStorage.setItem('currentCheckoutProduct', JSON.stringify(checkoutProduct));
+            window.location.href = "paymant.html";
+        }
+    </script>
+
+
+
+    <script src="script.js"></script>
+
+    <script>
+        // Review section logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const stars = document.querySelectorAll('.rating-input .stars i');
+            const ratingValue = document.getElementById('rating-value');
+
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    const value = this.getAttribute('data-value');
+                    ratingValue.value = value;
+
+                    // Update stars appearance
+                    stars.forEach(s => {
+                        if (s.getAttribute('data-value') <= value) {
+                            s.classList.remove('fa-regular');
+                            s.classList.add('fa-solid');
+                        } else {
+                            s.classList.remove('fa-solid');
+                            s.classList.add('fa-regular');
+                        }
+                    });
+                });
+            });
+        });
+
+        function submitReview() {
+            const rating = document.getElementById('rating-value').value;
+            const text = document.getElementById('review-text').value;
+            const photoInput = document.getElementById('product-photo');
+
+            if (rating == 0) {
+                alert("Please select a star rating");
+                return;
+            }
+            if (text.trim() === "") {
+                alert("Please write a review");
+                return;
+            }
+
+            if (photoInput.files && photoInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    addReviewDOM(rating, text, e.target.result);
+                };
+                reader.readAsDataURL(photoInput.files[0]);
+            } else {
+                addReviewDOM(rating, text, null);
+            }
+
+            // Reset form
+            document.getElementById('review-form').reset();
+            document.getElementById('rating-value').value = 0;
+            const titleEl = document.getElementById('review-title');
+            if (titleEl) titleEl.value = '';
+            const userEl = document.getElementById('review-user');
+            if (userEl) userEl.value = '';
+            document.querySelectorAll('.rating-input .stars i').forEach(s => {
+                s.classList.remove('fa-solid');
+                s.classList.add('fa-regular');
+            });
+        }
+
+        function addReviewDOM(rating, text, photoSrc) {
+            let starsHtml = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    starsHtml += '<i class="fa-solid fa-star" style="color:#FFA41C;"></i>';
+                } else {
+                    starsHtml += '<i class="fa-regular fa-star" style="color:#FFA41C;"></i>';
+                }
+            }
+
+            const titleInput = document.getElementById('review-title');
+            const title = titleInput && titleInput.value ? titleInput.value : "Customer Review";
+            const userInput = document.getElementById('review-user');
+            const userName = userInput && userInput.value ? userInput.value : "Customer User ID " + Math.floor(Math.random() * 10000);
+            const date = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            let imgHtml = photoSrc ? <div style="flex: 0 0 150px; margin-left: 20px;"><img src=" + photoSrc + " style="width: 100%; border-radius: 4px; border: 1px solid #D5D9D9; object-fit: contain;"></div> : '';
+
+            const reviewItem =
+                <div class="review-item" style="margin-bottom: 25px; font-family: Arial, sans-serif; color: #0F1111;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <i class="fa-solid fa-circle-user" style="font-size: 24px; color: #B3B3B3; margin-right: 10px;"></i>
+                        <span style="font-weight: 400; font-size: 14px;"> + userName + </span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <div style="margin-right: 10px; font-size: 14px;"> + starsHtml + </div>
+                        <span style="font-weight: 700; font-size: 14px;"> + title + </span>
+                    </div>
+
+                    <p style="color: #565959; font-size: 13px; margin-bottom: 5px;">Reviewed in India on  + date + </p>
+                    <p style="color: #C45500; font-size: 11px; font-weight: 700; margin-bottom: 10px;">Verified Purchase</p>
+
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4; flex: 1;"> + text + </p>
+                        + imgHtml +
+                    </div>
+
+                    <div style="margin-top: 15px; font-size: 13px; color: #565959;">
+                        <span style="border: 1px solid #D5D9D9; border-radius: 4px; padding: 4px 12px; cursor: pointer; margin-right: 10px; display: inline-block;">Helpful</span>
+                        <span style="border-left: 1px solid #D5D9D9; padding-left: 10px; cursor: pointer;">Report</span>
+                    </div>
+                </div>
+                ;
+
+            const list = document.getElementById('reviews-list');
+            list.insertAdjacentHTML('afterbegin', reviewItem);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech2etc Ecommerce - Login/Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="E:\Shopping app\html code\style.css" />
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <style>
+        /* Override glassmorphism styles to make forms background white */
+        .auth-section {
+            background: #E3E6F3; /* Match the header background for consistency or keep gradient. Using light color. */
+        }
+        .form-box {
+            background: #ffffff !important;
+            border: 1px solid #e1e1e1 !important;
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .form-header h2 {
+            color: #222 !important;
+            text-shadow: none !important;
+        }
+
+        .form-header p {
+            color: #465b52 !important;
+        }
+
+        .input-group input, 
+        .input-group select {
+            background: #f8f9fa !important;
+            border: 1px solid #ccc !important;
+            color: #333 !important;
+        }
+
+        .input-group input::placeholder {
+            color: #888 !important;
+        }
+
+        .input-group i {
+            color: #888 !important;
+        }
+
+        .input-group input:focus, 
+        .input-group select:focus {
+            border-color: #088178 !important;
+            box-shadow: none !important;
+        }
+
+        .input-group input:focus + i, 
+        .input-group select:focus + i {
+            color: #088178 !important;
+        }
+
+        .options {
+            color: #465b52 !important;
+        }
+
+        .forgot-pass {
+            color: #088178 !important;
+        }
+
+        .forgot-pass:hover {
+            text-shadow: none !important;
+            text-decoration: underline;
+        }
+
+        .auth-btn {
+            background: #088178 !important;
+            color: #fff !important;
+        }
+
+        .auth-btn:hover {
+            background: #066962 !important;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .switch-form {
+            color: #465b52 !important;
+        }
+
+        .switch-form a {
+            color: #088178 !important;
+        }
+        
+        .switch-form a:hover {
+            text-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="E:\Shopping app\images\Products\logo.png" class="logo"  alt=""></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Addtocart.html" id="lg-bag"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                <li><a class="active" href="login.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="Addtocart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <!-- Authentication Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            
+            <!-- Login Form -->
+            <div class="form-box active" id="login-box">
+                <div class="form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Login to your account to continue</p>
+                </div>
+                <form id="login-form">
+                    <div id="login-error" class="error-message" style="display:none; color: red; margin-bottom: 10px;"></div>
+                    <div class="input-group">
+                        <input type="email" id="login-email" placeholder="Email ID" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    
+                    <div class="options">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="auth-btn">Login</button>
+                    
+                    <div class="switch-form">
+                        <p>Don't have an account? <a href="register.html">Register here</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo "  src="E:\Shopping app\images\Products\logo.png">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Kansa N.A road, Visnagar  </p>
+            <p><strong>Phone:</strong> (+91) 8128036320</p>
+            <p><strong>Hours:</strong>10:00 - 18:00, Mon - Sat </p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/share/1H2fb8jbGU/">
+                    <i class="fa-brands fa-facebook"></i></a>
+                    
+                    <i class="fa-brands fa-twitter"></i>
+                    <a href="https://www.instagram.com/ved_patel16?igsh=MXVpMzVxZmZwcmRtYw==">
+                     <i class="fa-brands fa-instagram"></i></a>
+                     <i class="fa-brands fa-pinterest"></i>
+                     <a href="https://youtube.com/@ved_gaming_007?si=9U7tTuYo182hvdED">
+                     <i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+             <a href="#">Delivery Information</a>
+              <a href="#">Privacy Policy</a>
+               <a href="#">Terms & Conditions</a>
+                <a href="#">Contect us</a>
+        </div>
+         <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+             <a href="#">View Cart</a>
+              <a href="#">My Wishlist</a>
+               <a href="order.html">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+               <a href="https://apps.apple.com/us/app/amazon-shopping/id297606951"> <img src="E:\Shopping app\images\Pay\app.jpg"></a>
+               <a href="https://play.google.com/store/search?q=amazon&c=apps&hl=en_IN">
+                <img src="E:\Shopping app\images\Pay\play.jpg"></a>
+            </div>
+            <p>Secured App Store or Google Play</p>
+            <img src="E:\Shopping app\images\Pay\pay.png">
+        </div>
+        <div class="copyright">
+            <p>@ 2026, Tech2 etc - HTML CSS Ecommerce Template</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // --- Supabase Setup ---
+        const SUPABASE_URL = 'https://rgmbgyyouorlrxzvbdul.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_KC9jF1waWDMOxLnFGvbcdw_YLMYjMKd';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // --- Auth Logic ---
+        const loginForm = document.getElementById('login-form');
+        const loginError = document.getElementById('login-error');
+
+        function showError(element, message) {
+            element.innerText = message;
+            element.style.display = 'block';
+        }
+
+        // Login Handler
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loginError.style.display = 'none';
+
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            const btn = loginForm.querySelector('.auth-btn');
+            const originalText = btn.innerText;
+            btn.innerText = 'Logging in...';
+
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email: email,
+                password: password,
+            });
+
+            if (error) {
+                showError(loginError, error.message);
+            } else {
+                // Connect to user_profiles table to fetch custom user details
+                const user = data.user;
+                const { data: profile, error: profileError } = await supabase
+                    .from('user_profiles')
+                    .select('username, role')
+                    .eq('id', user.id)
+                    .single();
+
+                if (profileError) {
+                    alert('Login successful, but profile details could not be loaded.');
+                } else {
+                    alert(`Welcome back, ${profile.username}! You are logged in as a ${profile.role}.`);
+                    
+                    // Save to localStorage so other pages can use this data
+                    localStorage.setItem('userRole', profile.role);
+                    localStorage.setItem('userName', profile.username);
+                }
+                
+                window.location.href = 'index.html'; // redirect on success
+            }
+            btn.innerText = originalText;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Shopping Cart - Tech2etc Ecommerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="Stylesheet" href="E:\Shopping app\html code\style.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="E:\Shopping app\images\Products\logo.png" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="Addtocart.html" id="lg-bag"><i
+                            class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="AddtoAddtocart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header"
+        style="background-image: url('E:/Shopping app/images/Banner/b1.jpg');">
+        <h2>#cart_summary</h2>
+        <p>Review your shopping cart items and apply coupon codes!</p>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody id="cart-items-body">
+                <!-- Dynamic cart rows will go here -->
+            </tbody>
+        </table>
+
+        <div id="empty-cart-message"
+            style="display: none; text-align: center; padding: 40px 20px; font-size: 18px; color: #465b52;">
+            <i class="fa-solid fa-basket-shopping" style="font-size: 54px; margin-bottom: 20px; color: #088178;"></i>
+            <p>Your shopping cart is currently empty.</p>
+            <a href="shop.html"><button class="normal"
+                    style="background-color: #088178; color: #fff; margin-top: 20px;">Shop Now</button></a>
+        </div>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+                <input type="text" id="coupon-code" placeholder="Enter Your Coupon (e.g. SAVE10, SAVE20)">
+                <button class="normal" id="apply-coupon-btn">Apply</button>
+            </div>
+            <div id="coupon-message" style="margin-top: 10px; font-size: 14px; font-weight: 600;"></div>
+        </div>
+
+        <div id="subtotal">
+            <h3>Cart Totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td id="cart-subtotal-val">$0.00</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr id="discount-row" style="display: none;">
+                    <td>Discount</td>
+                    <td id="discount-val">-$0.00</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong id="cart-total-val">$0.00</strong></td>
+                </tr>
+            </table>
+            <button class="normal" id="checkout-btn" style="background-color: #088178; color: white;">Proceed to
+                checkout</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="E:\Shopping app\images\Products\logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Kansa N.A road, Visnagar</p>
+            <p><strong>Phone:</strong> (+91) 8128036320</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/share/1H2fb8jbGU/">
+                        <i class="fa-brands fa-facebook"></i></a>
+                    <i class="fa-brands fa-twitter"></i>
+                    <a href="https://www.instagram.com/ved_patel16?igsh=MXVpMzVxZmZwcmRtYw==">
+                        <i class="fa-brands fa-instagram"></i></a>
+                    <i class="fa-brands fa-pinterest"></i>
+                    <a href="https://youtube.com/@ved_gaming_007?si=9U7tTuYo182hvdED">
+                        <i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="AddtoAddtocart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="order.html">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://apps.apple.com/us/app/amazon-shopping/id297606951"> <img
+                        src="E:\Shopping app\images\Pay\app.jpg" alt=""></a>
+                <a href="https://play.google.com/store/search?q=amazon&c=apps&hl=en_IN">
+                    <img src="E:\Shopping app\images\Pay\play.jpg" alt=""></a>
+            </div>
+            <p>Secured App Store or Google Play</p>
+            <img src="E:\Shopping app\images\Pay\pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>@ 2026, Tech2 etc - HTML CSS Ecommerce Template</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

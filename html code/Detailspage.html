@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech2etc Ecommerce - Order Details</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="E:\Shopping app\html code\style.css"/>
+    <link rel="stylesheet" href="style.css">
+
+    <style> 
+        /* Details Page Specific Premium CSS */
+        #details-section {
+            padding: 60px 80px;
+            background-color: #f4f6f8;
+        }
+
+        .details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .details-left {
+            flex: 1;
+            min-width: 600px;
+        }
+
+        .details-right {
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .details-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #088178;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .details-card-title i {
+            color: #088178;
+        }
+
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e9e1;
+        }
+
+        .details-table th, .details-table td {
+            padding: 15px 20px;
+            font-size: 14px;
+            text-align: left;
+            border-bottom: 1px solid #e2e9e1;
+        }
+
+        .details-table th {
+            background-color: #f9fbf9;
+            color: #222;
+            font-weight: 600;
+            width: 30%;
+        }
+
+        .details-table td {
+            color: #465b52;
+        }
+
+        .details-table tr:last-child th,
+        .details-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Product Table Specifics */
+        .prod-table th {
+            width: auto;
+            background-color: #f9fbf9;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sidebar styles */
+        .sidebar-card {
+            background-color: #fff;
+            border: 1px solid #cce7d0;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+            text-align: center;
+        }
+
+        .sidebar-card h3 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e9e1;
+            padding-bottom: 10px;
+        }
+
+        /* QR Styling */
+        .qr-card img {
+            width: 200px;
+            height: 200px;
+            margin: 15px auto;
+            display: block;
+            border-radius: 10px;
+            border: 1px solid #e2e9e1;
+            padding: 5px;
+            background: #fff;
+        }
+
+        .qr-amount {
+            font-size: 20px;
+            font-weight: 700;
+            color: #088178;
+            margin: 10px 0;
+        }
+
+        .qr-meta {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Back Button */
+        .back-btn-container {
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background-color: #088178;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(8, 129, 120, 0.2);
+        }
+
+        .back-btn:hover {
+            background-color: #066b63;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(8, 129, 120, 0.3);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .status-pending {
+            background: rgba(255, 189, 39, 0.15);
+            color: #ffbd27;
+            border: 1px solid rgba(255, 189, 39, 0.3);
+        }
+
+        .status-shipped {
+            background: rgba(35, 166, 213, 0.15);
+            color: #5cc2e6;
+            border: 1px solid rgba(35, 166, 213, 0.3);
+        }
+
+        .status-delivered {
+            background: rgba(35, 213, 171, 0.15);
+            color: #2cdbb3;
+            border: 1px solid rgba(35, 213, 171, 0.3);
+        }
+
+        .status-badge.paid {
+            background: rgba(35, 213, 171, 0.15);
+            color: #2cdbb3;
+            border: 1px solid rgba(35, 213, 171, 0.3);
+        }
+
+        .status-badge.unpaid {
+            background: rgba(255, 82, 59, 0.15);
+            color: #ff523b;
+            border: 1px solid rgba(255, 82, 59, 0.3);
+        }
+
+        .size-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #e2e9e1;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        /* Product Card Matching index.html */
+        #product1 .pro {
+            width: 100%;
+            min-width: unset;
+            margin: 0;
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+            background-color: #fff;
+        }
+
+        #product1 .pro img {
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        /* Mobile Responsive adjustments */
+        @media (max-width: 799px) {
+            #details-section {
+                padding: 40px 20px;
+            }
+
+            .details-left {
+                min-width: 100%;
+            }
+
+            .details-right {
+                width: 100%;
+                align-items: center;
+            }
+
+            #product1 .pro {
+                max-width: 320px;
+            }
+
+            .qr-card {
+                max-width: 320px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><img src="E:\Shopping app\images\Products\logo.png" class="logo" alt="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Addtocart.html" id="lg-bag"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                <li><a class="active" href="order.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="Addtocart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2 id="pageTitleHeading">#order_details</h2>
+        <p>Review customer delivery information and payment status details below.</p>
+    </section>
+
+    <section id="details-section">
+        <div class="back-btn-container">
+            <a href="order.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left-long"></i> Back to Tracking Dashboard
+            </a>
+        </div>
+
+        <div class="details-container">
+            <div class="details-left">
+                <!-- Customer Delivery Details Table -->
+                <div class="details-card-title">
+                    <i class="fa-solid fa-truck-ramp-box"></i> Customer Delivery Details
+                </div>
+                <table class="details-table">
+                    <tr>
+                        <th>Order ID</th>
+                        <td id="tdOrderId" style="font-weight: 700;">-</td>
+                    </tr>
+                    <tr>
+                        <th>Customer Name</th>
+                        <td id="tdCustName" style="font-weight: 600; color: #1a1a1a;">-</td>
+                    </tr>
+                    <tr>
+                        <th>Email Address</th>
+                        <td id="tdCustEmail">-</td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td id="tdCustPhone">-</td>
+                    </tr>
+                    <tr>
+                        <th>Shipping Address</th>
+                        <td id="tdCustAddress">-</td>
+                    </tr>
+                    <tr>
+                        <th>Delivery Status</th>
+                        <td><span id="badgeDeliveryStatus" class="status-badge">-</span></td>
+                    </tr>
+                </table>
+
+                <!-- Product Payment Details Table -->
+                <div class="details-card-title">
+                    <i class="fa-solid fa-credit-card"></i> Product Payment Details
+                </div>
+                <table class="details-table prod-table">
+                    <thead>
+                        <tr>
+                            <th>Product Details</th>
+                            <th style="text-align: center;">Size</th>
+                            <th style="text-align: center;">Price</th>
+                            <th style="text-align: center;">Quantity</th>
+                            <th style="text-align: center;">Subtotal</th>
+                            <th style="text-align: center;">Payment Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="tdProdName" style="font-weight: 600;">-</td>
+                            <td style="text-align: center;"><span id="badgeProdSize" class="size-badge">-</span></td>
+                            <td id="tdProdPrice" style="text-align: center;">-</td>
+                            <td style="text-align: center;">1</td>
+                            <td id="tdProdSubtotal" style="text-align: center; font-weight: 700; color: #088178;">-</td>
+                            <td style="text-align: center;"><span id="badgePayStatus" class="status-badge">-</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="details-right">
+                <!-- Product Preview Card (Sized same as index.html cards) -->
+                <div class="sidebar-card">
+                    <h3>Product Item</h3>
+                    <div id="product1">
+                        <div class="pro">
+                            <img id="previewImg" src="" alt="Product Image">
+                            <div class="des">
+                                <span id="previewBrand">adidas</span>
+                                <h5 id="previewName">-</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4 id="previewPrice">-</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment QR Card -->
+                <div class="sidebar-card qr-card">
+                    <h3>Payment QR Code</h3>
+                    <p style="font-size: 13px; color: #666;">Scan using any UPI app to pay</p>
+                    <img id="qrCodeImg" src="" alt="UPI Payment QR Code">
+                    <div id="qrAmount" class="qr-amount">-</div>
+                    <div id="qrMeta" class="qr-meta">-</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="E:\Shopping app\images\Products\logo.png" alt="logo">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Kansa N.A road, Visnagar </p>
+            <p><strong>Phone:</strong> (+91) 8128036320</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat </p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/share/1H2fb8jbGU/">
+                        <i class="fa-brands fa-facebook"></i></a>
+                    <i class="fa-brands fa-twitter"></i>
+                    <a href="https://www.instagram.com/ved_patel16?igsh=MXVpMzVxZmZwcmRtYw==">
+                        <i class="fa-brands fa-instagram"></i></a>
+                    <i class="fa-brands fa-pinterest"></i>
+                    <a href="https://youtube.com/@ved_gaming_007?si=9U7tTuYo182hvdED">
+                        <i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="order.html">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <a href="https://apps.apple.com/us/app/amazon-shopping/id297606951">
+                    <img src="E:\Shopping app\images\Pay\app.jpg" alt="app"></a>
+                <a href="https://play.google.com/store/search?q=amazon&c=apps&hl=en_IN">
+                    <img src="E:\Shopping app\images\Pay\play.jpg" alt="play"></a>
+            </div>
+            <p>Secured App Store or Google Play</p>
+            <img src="E:\Shopping app\images\Pay\pay.png" alt="payments">
+        </div>
+        <div class="copyright">
+            <p>@ 2026, Tech2 etc - HTML CSS Ecommerce Template</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Default Mock Orders Data in case localStorage is empty or key not matching
+        const defaultOrders = [
+            {
+                id: "ORD-89421",
+                customerName: "Ved Patel",
+                email: "ved@example.com",
+                phone: "+91 8128036320",
+                address: "Kansa N.A road, Visnagar, Gujarat",
+                productName: "Cartoon Astronaut T-Shirt",
+                productPrice: "$139.00",
+                productImg: "E:\\Shopping app\\images\\Products\\f1.jpg",
+                size: "M",
+                status: "Delivered"
+            },
+            {
+                id: "ORD-45612",
+                customerName: "Aarav Sharma",
+                email: "aarav@example.com",
+                phone: "+91 9876543210",
+                address: "Sector 15, Gandhinagar, Gujarat",
+                productName: "Desert Drift Sunset Shirt",
+                productPrice: "$120.00",
+                productImg: "E:\\Shopping app\\images\\Products\\f3.jpg",
+                size: "L",
+                status: "Shipped"
+            },
+            {
+                id: "ORD-23910",
+                customerName: "Priya Patel",
+                email: "priya@example.com",
+                phone: "+91 9112233445",
+                address: "Satellite Road, Ahmedabad, Gujarat",
+                productName: "White Casual Shirt",
+                productPrice: "$129.00",
+                productImg: "E:\\Shopping app\\images\\Products\\f5.jpg",
+                size: "S",
+                status: "Pending"
+            }
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Retrieve orders list
+            let orders = JSON.parse(localStorage.getItem('orders'));
+            if (!orders || orders.length === 0) {
+                orders = defaultOrders;
+                localStorage.setItem('orders', JSON.stringify(orders));
+            }
+
+            // Get orderId from query string
+            const urlParams = new URLSearchParams(window.location.search);
+            let orderId = urlParams.get('orderId');
+
+            // Find matching order or fallback to the first order
+            let currentOrder = null;
+            if (orderId) {
+                currentOrder = orders.find(o => o.id.toLowerCase() === orderId.toLowerCase() || o.id.toLowerCase().replace('#', '') === orderId.toLowerCase().replace('#', ''));
+            }
+            if (!currentOrder) {
+                currentOrder = orders[0];
+            }
+
+            // Render details
+            if (currentOrder) {
+                const formattedId = currentOrder.id.startsWith('#') ? currentOrder.id : `#${currentOrder.id}`;
+                document.getElementById('pageTitleHeading').textContent = `Order Details ${formattedId}`;
+                
+                // Customer Details
+                document.getElementById('tdOrderId').textContent = formattedId;
+                document.getElementById('tdCustName').textContent = currentOrder.customerName;
+                document.getElementById('tdCustEmail').textContent = currentOrder.email;
+                document.getElementById('tdCustPhone').textContent = currentOrder.phone;
+                document.getElementById('tdCustAddress').textContent = currentOrder.address;
+                
+                const deliveryBadge = document.getElementById('badgeDeliveryStatus');
+                deliveryBadge.textContent = currentOrder.status;
+                deliveryBadge.className = `status-badge status-${currentOrder.status.toLowerCase()}`;
+
+                // Product Details
+                document.getElementById('tdProdName').textContent = currentOrder.productName;
+                document.getElementById('badgeProdSize').textContent = currentOrder.size;
+                document.getElementById('tdProdPrice').textContent = currentOrder.productPrice;
+                document.getElementById('tdProdSubtotal').textContent = currentOrder.productPrice;
+
+                // Payment Status
+                const payBadge = document.getElementById('badgePayStatus');
+                let payStatus = "Pending";
+                if (currentOrder.status.toLowerCase() === "delivered" || currentOrder.status.toLowerCase() === "shipped") {
+                    payStatus = "Paid";
+                }
+                payBadge.textContent = payStatus;
+                payBadge.className = `status-badge ${payStatus.toLowerCase()}`;
+
+                // Sidebar Product Preview Card
+                document.getElementById('previewImg').src = currentOrder.productImg;
+                document.getElementById('previewName').textContent = currentOrder.productName;
+                document.getElementById('previewPrice').textContent = currentOrder.productPrice;
+                
+                // Extract brand from product name if possible, or keep default
+                if (currentOrder.productName.toLowerCase().includes("t-shirt") || currentOrder.productName.toLowerCase().includes("shirt")) {
+                    document.getElementById('previewBrand').textContent = "adidas";
+                }
+
+                // Sidebar QR Code
+                const cleanedAmount = currentOrder.productPrice.replace('$', '').trim();
+                const upiData = `upi://pay?pa=merchant@upi&pn=ShoppingApp&am=${cleanedAmount}&tn=${currentOrder.id}`;
+                const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiData)}`;
+                
+                document.getElementById('qrCodeImg').src = qrApiUrl;
+                document.getElementById('qrAmount').textContent = currentOrder.productPrice;
+                document.getElementById('qrMeta').textContent = `${formattedId} • ${currentOrder.customerName}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
