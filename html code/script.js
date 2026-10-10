@@ -170,7 +170,7 @@ document.addEventListener('click', function(e) {
                 const brand = brandEl ? brandEl.innerText.trim() : 'adidas';
                 
                 const nameEl = infoEl.querySelector('h4');
-                const name = nameEl ? nameEl.innerText.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').trim() : '';
+                const name = nameEl ? nameEl.innerText.replace(/[/r/n]+/g, ' ').replace(//s+/g, ' ').trim() : '';
                 
                 const priceEl = infoEl.querySelector('h2');
                 const price = priceEl ? priceEl.innerText.trim() : '$0.00';
@@ -216,7 +216,7 @@ document.addEventListener('click', function(e) {
                 if (brandEl) brand = brandEl.innerText.trim();
                 
                 const nameEl = infoEl.querySelector('h4');
-                if (nameEl) name = nameEl.innerText.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').trim();
+                if (nameEl) name = nameEl.innerText.replace(/[/r/n]+/g, ' ').replace(//s+/g, ' ').trim();
                 
                 const priceEl = infoEl.querySelector('h2');
                 if (priceEl) price = priceEl.innerText.trim();
@@ -416,7 +416,7 @@ document.addEventListener('click', function(e) {
         let subtotal = 0;
         let currencySign = '$';
         let itemNames = [];
-        let firstImg = 'E:\\Shopping app\\images\\Products\\f1.jpg';
+        let firstImg = 'E://Shopping app//images//Products//f1.jpg';
         let brand = 'Multiple Brands';
         
         cart.forEach((item, index) => {

@@ -145,7 +145,7 @@ body {
 }
 
 #hero {
-  background-image: url("E:/Shopping app/images/Products/hero4.png");
+  background-image: url("../images/Products/hero4.png");
   height: 90vh;
   width: 100%;
   background-size: cover;
@@ -175,7 +175,7 @@ body {
 #hero button {
   color: #088178;
   border: 0;
-  background-image: url("E:/Shopping app/images/Products/button.png");
+  background-image: url("../images/Products/button.png");
   padding: 14px 40px 14px 50px;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -258,7 +258,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("E:/Shopping app/images/Banner/b10.jpg");
+  background-image: url("../images/Banner/b10.jpg");
   min-width: 30%;
   height: 30vh;
   background-size: cover;
@@ -268,11 +268,11 @@ body {
 }
 
 #shopping-categories .banner-box2 {
-  background-image: url("E:/Shopping app/images/Banner/b17.jpg");
+  background-image: url("../images/Banner/b17.jpg");
 }
 
 #shopping-categories .banner-box3 {
-  background-image: url("E:/Shopping app/images/Banner/b7.jpg");
+  background-image: url("../images/Banner/b7.jpg");
 }
 
 #shopping-categories h2 {
@@ -453,7 +453,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url("E:/Shopping app/images/Banner/b2.jpg");
+  background-image: url("../images/Banner/b2.jpg");
   width: 100%;
   height: 40vh;
 
@@ -498,7 +498,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 
-  background-image: url("E:/Shopping app/images/Banner/b17.jpg");
+  background-image: url("../images/Banner/b17.jpg");
   min-width: 650px;
   height: 50vh;
 
@@ -513,7 +513,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: url("E:/Shopping app/images/Banner/b10.jpg");
+  background-image: url("../images/Banner/b10.jpg");
 
   min-width: 650px;
   height: 50vh;
@@ -565,7 +565,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 
-  background-image: url("E:/Shopping app/images/Banner/b7.jpg");
+  background-image: url("../images/Banner/b7.jpg");
   min-width: 30%;
   height: 30vh;
 
@@ -581,7 +581,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 
-  background-image: url("E:/Shopping app/images/Banner/b4.jpg");
+  background-image: url("../images/Banner/b4.jpg");
   min-width: 30%;
   height: 30vh;
 
@@ -597,7 +597,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 
-  background-image: url("E:/Shopping app/images/Banner/b18.jpg");
+  background-image: url("../images/Banner/b18.jpg");
   min-width: 30%;
   height: 30vh;
 
@@ -626,7 +626,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  background-image: url("C:/Users/Admin/Downloads/b14.png");
+  background-image: url("../images/Products/b14.png");
   background-repeat: no-repeat;
   background-position: 20% 30%;
   background-color: #041e42;
@@ -754,7 +754,7 @@ footer .copyright {
 
 /*Shop Page */
 #page-header {
-  background-image: url("E:/Shopping app/images/Banner/b1.jpg");
+  background-image: url("../images/Banner/b1.jpg");
   width: 100%;
   height: 40vh;
   background-size: cover;
@@ -1134,7 +1134,7 @@ footer .copyright {
 
 /* Blog Page */
 #page-header.blog-header {
-  background-image: url("E:/Shopping app/images/Banner/b19.jpg");
+  background-image: url("../images/Banner/b19.jpg");
 
 }
 
@@ -1206,7 +1206,7 @@ footer .copyright {
 
 /* About Page */
 #page-header.about-header {
-  background-image: url("E:/Shopping app/images/Banner/b1.jpg");
+  background-image: url("../images/Banner/b1.jpg");
 }
 
 #about-head img {
@@ -1884,7 +1884,7 @@ form .normal:focus {
   text-align: center;
   flex-direction: column;
   padding: 80px 20px;
-  background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(4, 30, 66, 0.9)), url("E:/Shopping app/images/Banner/b1.jpg");
+  background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(4, 30, 66, 0.9)), url("../images/Banner/b1.jpg");
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
@@ -2010,4 +2010,4 @@ form .normal:focus {
   color: #088178;
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
-}
+}
